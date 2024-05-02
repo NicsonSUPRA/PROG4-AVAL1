@@ -26,13 +26,13 @@ class _PlayPageState extends State<PlayPage> {
   void initState() {
     wordChoosed = Database().getRandomWord;
     occultWord = wordChoosed.word.split("").map((e) => Text(
-      '_',
+      //'_',
+      (e == " ")?" ":"_",
       style: TextStyle(
         fontSize: 40.0,
         fontWeight: FontWeight.bold
       ),
     )).toList();
-    print(wordChoosed.word);
     super.initState();
   }
 
@@ -54,11 +54,22 @@ class _PlayPageState extends State<PlayPage> {
           title: Text("Jogo da Forca"),
         ),
         body: Center(
-          child: Text(
-            "Parabens você ganhou!!",
-            style: TextStyle(
-              fontSize: 25
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Parabens você ganhou!!",
+                style: TextStyle(
+                  fontSize: 25
+                ),
+              ),
+              Text(
+                "Palavra: ${wordChoosed.word}",
+                style: TextStyle(
+                  fontSize: 25
+                ),
+              )
+            ],
           ),
         ),
       );
@@ -104,6 +115,7 @@ class _PlayPageState extends State<PlayPage> {
   }
 
   void verifyAndChangeLetter(String letterChoosed) {
+
     if(!acurretLetters.contains(letterChoosed)){
       for(int i = 0; i < wordChoosed.word.length; i++) {     
         if(wordChoosed.word[i] == letterChoosed) {

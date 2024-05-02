@@ -13,7 +13,8 @@ class Database {
     Word(word: "salada", clue: "pode participar de refeição"),
     Word(word: "filho", clue: "normalmente tem em uma familia"),
     Word(word: "janela", clue: "pode clarear um cômodo"),
-    Word(word: "toalha", clue: "usado no banho")
+    Word(word: "toalha", clue: "usado no banho"),
+    Word(word: "silvio santos", clue: "apresentador famoso")
   ];
 
   Word get getRandomWord {

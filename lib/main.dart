@@ -12,6 +12,7 @@ class JokenpoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "JokenpoApp",
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true
       ),

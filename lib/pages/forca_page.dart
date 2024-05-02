@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './play_page.dart';
+import './entrance_page.dart';
 
 class ForcaPage extends StatefulWidget {
   const ForcaPage({super.key});
@@ -9,8 +10,14 @@ class ForcaPage extends StatefulWidget {
 }
 
 class _ForcaPageState extends State<ForcaPage> {
+  bool goToPlayPage = false;
+  void navegate() {
+    setState(() {
+      goToPlayPage = true;
+    });
+  }
   @override
   Widget build(BuildContext context) {
-    return const PlayPage();
+    return (goToPlayPage) ?PlayPage():Entrance(button: ElevatedButton(onPressed: navegate, child: Text("Começar")));
   }
 }
